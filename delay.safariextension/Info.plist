@@ -35,6 +35,8 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://github.com/tfausak/delay/blob/master/update-manifest.plist</string>
 	<key>Website</key>
 	<string>https://github.com/tfausak/delay</string>
 </dict>
