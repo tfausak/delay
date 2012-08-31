@@ -2,12 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Author</key>
+	<string>Taylor Fausak</string>
 	<key>Builder Version</key>
 	<string>8536.25</string>
 	<key>CFBundleDisplayName</key>
-	<string>delay</string>
+	<string>Delay</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.delay</string>
+	<string>me.fausak.taylor.delay</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -21,12 +23,19 @@
 		<key>Scripts</key>
 		<dict/>
 	</dict>
+	<key>Description</key>
+	<string>Delays the loading of time-wasting websites.</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
 	<dict>
 		<key>Website Access</key>
-		<dict/>
+		<dict>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
 	</dict>
+	<key>Website</key>
+	<string>https://github.com/tfausak/delay</string>
 </dict>
 </plist>
