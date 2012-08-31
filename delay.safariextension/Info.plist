@@ -57,6 +57,9 @@
             <dict>
                 <key>Level</key>
                 <string>All</string>
+
+                <key>Include Secure Pages</key>
+                <true/>
             </dict>
         </dict>
 
