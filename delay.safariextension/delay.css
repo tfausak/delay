@@ -1,3 +1,4 @@
 #delay-safari-extension, #delay-safari-extension * {
+    opacity: 0 !important;
     visibility: hidden !important;
 }
