@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    var settings, display;
+    var settings, visibility;
 
     if (window !== window.top) {
         return;
@@ -13,10 +13,10 @@
             settings = event.message;
 
             if (settings.blacklist.indexOf(window.location.hostname) !== -1) {
-                display = document.documentElement.style.display;
-                document.documentElement.style.display = 'none';
+                visibility = document.documentElement.style.visibility;
+                document.documentElement.style.visibility = 'hidden';
                 window.setTimeout(function () {
-                    document.documentElement.style.display = display;
+                    document.documentElement.style.visibility = visibility;
                 }, 1000 * (settings.delay - settings.jitter + (Math.random() * 2 * settings.jitter)));
             }
         }
