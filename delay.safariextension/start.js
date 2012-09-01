@@ -17,7 +17,7 @@
                 document.documentElement.style.visibility = 'hidden';
                 window.setTimeout(function () {
                     document.documentElement.style.visibility = visibility;
-                }, 1000 * (settings.delay - settings.jitter + (Math.random() * 2 * settings.jitter)));
+                }, settings.delay);
             }
         }
     }, false);
