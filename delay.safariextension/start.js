@@ -19,7 +19,7 @@
             settings = event.message;
             if (settings.blacklist.indexOf(window.location.hostname) !== -1) {
                 id = document.documentElement.id;
-                document.documentElement.id = 'delay';
+                document.documentElement.id = 'delay-safari-extension';
 
                 tick = 1000;
                 elapsed = 0;
