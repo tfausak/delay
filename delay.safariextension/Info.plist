@@ -37,11 +37,6 @@
                 <array>
                     <string>start.js</string>
                 </array>
-
-                <key>End</key>
-                <array>
-                    <string>end.js</string>
-                </array>
             </dict>
         </dict>
 
