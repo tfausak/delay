@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    var settings, id;
+    var settings, display;
 
     if (window !== window.top) {
         return;
@@ -13,10 +13,10 @@
             settings = event.message;
 
             if (settings.blacklist.indexOf(window.location.hostname) !== -1) {
-                id = document.firstChild.id || '';
-                document.firstChild.id += ' delay';
+                display = document.documentElement.style.display;
+                document.documentElement.style.display = 'none';
                 window.setTimeout(function () {
-                    document.firstChild.id = id;
+                    document.documentElement.style.display = display;
                 }, 1000 * (settings.delay - settings.jitter + (Math.random() * 2 * settings.jitter)));
             }
         }
