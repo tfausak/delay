@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    var active, settings, visibility, tick, elapsed, intervalID;
+    var active, settings, id, tick, elapsed, intervalID;
 
     if (window === window.top) {
         safari.self.tab.dispatchMessage('getSettings');
@@ -18,8 +18,8 @@
         if (event.name === 'settings') {
             settings = event.message;
             if (settings.blacklist.indexOf(window.location.hostname) !== -1) {
-                visibility = document.documentElement.style.visibility;
-                document.documentElement.style.visibility = 'hidden';
+                id = document.documentElement.id;
+                document.documentElement.id = 'delay';
 
                 tick = 1000;
                 elapsed = 0;
@@ -28,7 +28,7 @@
                         elapsed += tick;
                     }
                     if (elapsed >= settings.delay) {
-                        document.documentElement.style.visibility = visibility;
+                        document.documentElement.id = id;
                         window.clearInterval(intervalID);
                     }
                 }, tick);

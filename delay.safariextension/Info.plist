@@ -38,6 +38,11 @@
                     <string>start.js</string>
                 </array>
             </dict>
+
+            <key>Stylesheets</key>
+            <array>
+                <string>delay.css</string>
+            </array>
         </dict>
 
         <key>Description</key>
