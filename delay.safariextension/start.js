@@ -1,34 +1,27 @@
 (function () {
     "use strict";
-    var active, settings, id, tick, elapsed, intervalID;
+    var active = true, elapsed = 0, intervalID, settings, tick = 1000;
 
     if (window === window.top) {
         safari.self.tab.dispatchMessage('getSettings');
-
-        active = true;
-        window.onblur = function (event) {
-            active = false;
-        };
-        window.onfocus = function (event) {
-            active = true;
-        };
+        window.onblur = function () { active = false; };
+        window.onfocus = function () { active = true; };
     }
 
     safari.self.addEventListener('message', function (event) {
         if (event.name === 'settings') {
             settings = event.message;
             if (settings.blacklist.indexOf(window.location.hostname) !== -1) {
-                id = document.documentElement.id;
-                document.documentElement.id = 'delay-safari-extension';
-
-                tick = 1000;
-                elapsed = 0;
+                document.documentElement.setAttribute('delay',
+                    Math.round(settings.delay / 1000));
                 intervalID = window.setInterval(function () {
                     if (active) {
                         elapsed += tick;
+                        document.documentElement.setAttribute('delay',
+                            Math.round((settings.delay - elapsed) / 1000));
                     }
                     if (elapsed >= settings.delay) {
-                        document.documentElement.id = id;
+                        document.documentElement.removeAttribute('delay');
                         window.clearInterval(intervalID);
                     }
                 }, tick);
