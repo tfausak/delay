@@ -20,7 +20,7 @@
 
             event.target.page.dispatchMessage('settings', {
                 'delay': delay,
-                'blacklist': blacklist,
+                'blacklist': blacklist
             });
         }
     }, false);
