@@ -19,8 +19,9 @@
             });
 
             event.target.page.dispatchMessage('settings', {
+                'blacklist': blacklist,
                 'delay': delay,
-                'blacklist': blacklist
+                'timer': safari.extension.settings.timer
             });
         }
     }, false);

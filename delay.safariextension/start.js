@@ -12,13 +12,25 @@
         if (event.name === 'settings') {
             settings = event.message;
             if (settings.blacklist.indexOf(window.location.hostname) !== -1) {
-                document.documentElement.setAttribute('delay',
-                    Math.round(settings.delay / 1000));
+                if (settings.timer) {
+                    document.documentElement.setAttribute('delay',
+                        Math.round(settings.delay / 1000));
+                }
+                else {
+                    document.documentElement.setAttribute('delay', '');
+                }
+
                 intervalID = window.setInterval(function () {
                     if (active) {
                         elapsed += tick;
-                        document.documentElement.setAttribute('delay',
-                            Math.round((settings.delay - elapsed) / 1000));
+
+                        if (settings.timer) {
+                            document.documentElement.setAttribute('delay',
+                                Math.round((settings.delay - elapsed) / 1000));
+                        }
+                        else {
+                            document.documentElement.setAttribute('delay', '');
+                        }
                     }
                     if (elapsed >= settings.delay) {
                         document.documentElement.removeAttribute('delay');
