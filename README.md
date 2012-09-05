@@ -12,5 +12,7 @@ Inspired by [xkcd #862, "Let Go"][1].
     from the delay. Ranges from 0 to 10 seconds. Default: 5 seconds.
 -   **Blacklist**: List of hostnames to delay. Delimited by whitespace
     and case-insensitive. Default: `news.ycombinator.com www.reddit.com`.
+-   **Show timer**: Show a countdown timer while sites are delayed.
+    Default: true.
 
 [1]: http://xkcd.com/862/
