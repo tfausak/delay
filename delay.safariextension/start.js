@@ -32,7 +32,7 @@
                             document.documentElement.setAttribute('delay', '');
                         }
                     }
-                    if (elapsed >= settings.delay) {
+                    if (settings.delay - elapsed < 500) {
                         document.documentElement.removeAttribute('delay');
                         window.clearInterval(intervalID);
                     }
