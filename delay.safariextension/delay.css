@@ -1,3 +1,6 @@
+[delay] {
+    cursor: wait;
+}
 [delay]:before {
     color: black;
     content: attr(delay);
