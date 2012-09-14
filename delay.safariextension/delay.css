@@ -1,4 +1,5 @@
 [delay] {
+    background: transparent !important;
 }
 [delay]:before {
     color: black;
@@ -14,6 +15,7 @@
     z-index: 2147483647;
 }
 [delay] * {
+    background: transparent !important;
     opacity: 0 !important;
     visibility: hidden !important;
 }
