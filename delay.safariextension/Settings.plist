@@ -71,5 +71,31 @@
             <key>Type</key>
             <string>TextField</string>
         </dict>
+
+        <dict>
+            <key>DefaultValue</key>
+            <string>blacklist</string>
+
+            <key>Key</key>
+            <string>list</string>
+
+            <key>Title</key>
+            <string>Use</string>
+
+            <key>Titles</key>
+            <array>
+                <string>Blacklist</string>
+                <string>Whitelist</string>
+            </array>
+
+            <key>Type</key>
+            <string>PopUpButton</string>
+
+            <key>Values</key>
+            <array>
+                <string>blacklist</string>
+                <string>whitelist</string>
+            </array>
+        </dict>
     </array>
 </plist>
