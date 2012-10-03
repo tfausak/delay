@@ -9,17 +9,11 @@
             <key>Key</key>
             <string>delay</string>
 
-            <key>MaximumValue</key>
-            <real>60</real>
-
-            <key>MinimumValue</key>
-            <real>1</real>
-
             <key>Title</key>
             <string>Delay</string>
 
             <key>Type</key>
-            <string>Slider</string>
+            <string>TextField</string>
         </dict>
 
         <dict>
@@ -29,14 +23,11 @@
             <key>Key</key>
             <string>jitter</string>
 
-            <key>MaximumValue</key>
-            <real>10</real>
-
             <key>Title</key>
             <string>Jitter</string>
 
             <key>Type</key>
-            <string>Slider</string>
+            <string>TextField</string>
         </dict>
 
         <dict>
