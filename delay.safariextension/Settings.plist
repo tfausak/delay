@@ -41,6 +41,20 @@
 
         <dict>
             <key>DefaultValue</key>
+            <true/>
+
+            <key>Key</key>
+            <string>timer</string>
+
+            <key>Title</key>
+            <string>Show timer</string>
+
+            <key>Type</key>
+            <string>CheckBox</string>
+        </dict>
+
+        <dict>
+            <key>DefaultValue</key>
             <string>news.ycombinator.com www.reddit.com</string>
 
             <key>Key</key>
@@ -55,16 +69,16 @@
 
         <dict>
             <key>DefaultValue</key>
-            <true/>
+            <string>en.wikipedia.org www.google.com</string>
 
             <key>Key</key>
-            <string>timer</string>
+            <string>whitelist</string>
 
             <key>Title</key>
-            <string>Show timer</string>
+            <string>Whitelist</string>
 
             <key>Type</key>
-            <string>CheckBox</string>
+            <string>TextField</string>
         </dict>
     </array>
 </plist>
