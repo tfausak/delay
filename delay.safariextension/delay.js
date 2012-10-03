@@ -11,6 +11,14 @@
             blacklist = safari.extension.settings.blacklist;
             whitelist = safari.extension.settings.whitelist;
 
+            delay = parseInt(delay, 10);
+            if (isNaN(delay) || delay < 0) {
+                delay = 0;
+            }
+            jitter = parseInt(jitter, 10);
+            if (isNaN(jitter) || jitter < 0) {
+                jitter = 0;
+            }
             if (jitter) {
                 delay -= jitter;
                 delay += 2 * jitter * Math.random();
