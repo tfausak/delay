@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    var active = true, elapsed = 0, intervalID, settings, tick = 1000;
+    var active = true, block, elapsed = 0, intervalID, settings, tick = 1000;
 
     if (window === window.top) {
         safari.self.tab.dispatchMessage('getSettings');
@@ -11,7 +11,15 @@
     safari.self.addEventListener('message', function (event) {
         if (event.name === 'settings') {
             settings = event.message;
-            if (settings.blacklist.indexOf(window.location.hostname) !== -1) {
+
+            if (settings.list === 'whitelist') {
+                block = settings.whitelist.indexOf(window.location.hostname) === -1;
+            }
+            else {
+                block = settings.blacklist.indexOf(window.location.hostname) !== -1;
+            }
+
+            if (block) {
                 if (settings.timer) {
                     document.documentElement.setAttribute('delay',
                         Math.round(settings.delay / 1000));
