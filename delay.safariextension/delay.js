@@ -1,11 +1,13 @@
 (function () {
     "use strict";
-    var delay, jitter, blacklist, whitelist;
+    var delay, jitter, timer, list, blacklist, whitelist;
 
     safari.application.addEventListener('message', function (event) {
         if (event.name === 'getSettings') {
             delay = safari.extension.settings.delay;
             jitter = safari.extension.settings.jitter;
+            timer = safari.extension.settings.timer;
+            list = safari.extension.settings.list;
             blacklist = safari.extension.settings.blacklist;
             whitelist = safari.extension.settings.whitelist;
 
@@ -26,7 +28,8 @@
             event.target.page.dispatchMessage('settings', {
                 'blacklist': blacklist,
                 'delay': delay,
-                'timer': safari.extension.settings.timer,
+                'list': list,
+                'timer': timer,
                 'whitelist': whitelist,
             });
         }
