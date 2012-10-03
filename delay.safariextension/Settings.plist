@@ -3,93 +3,90 @@
 <plist version="1.0">
     <array>
         <dict>
-            <key>DefaultValue</key>
-            <real>30</real>
+            <key>Title</key>
+            <string>Delay</string>
 
             <key>Key</key>
             <string>delay</string>
 
-            <key>Title</key>
-            <string>Delay</string>
-
             <key>Type</key>
             <string>TextField</string>
+
+            <key>DefaultValue</key>
+            <real>30</real>
         </dict>
 
         <dict>
-            <key>DefaultValue</key>
-            <real>5</real>
+            <key>Title</key>
+            <string>Jitter</string>
 
             <key>Key</key>
             <string>jitter</string>
 
-            <key>Title</key>
-            <string>Jitter</string>
-
             <key>Type</key>
             <string>TextField</string>
+
+            <key>DefaultValue</key>
+            <real>5</real>
         </dict>
 
         <dict>
-            <key>DefaultValue</key>
-            <true/>
+            <key>Title</key>
+            <string>Show timer</string>
 
             <key>Key</key>
             <string>timer</string>
 
-            <key>Title</key>
-            <string>Show timer</string>
-
             <key>Type</key>
             <string>CheckBox</string>
+
+            <key>DefaultValue</key>
+            <true/>
         </dict>
 
         <dict>
-            <key>DefaultValue</key>
-            <string>news.ycombinator.com www.reddit.com</string>
+            <key>Title</key>
+            <string>Blacklist</string>
 
             <key>Key</key>
             <string>blacklist</string>
 
-            <key>Title</key>
-            <string>Blacklist</string>
-
             <key>Type</key>
             <string>TextField</string>
+
+            <key>DefaultValue</key>
+            <string>news.ycombinator.com www.reddit.com</string>
         </dict>
 
         <dict>
-            <key>DefaultValue</key>
-            <string>en.wikipedia.org www.google.com</string>
+            <key>Title</key>
+            <string>Whitelist</string>
 
             <key>Key</key>
             <string>whitelist</string>
 
-            <key>Title</key>
-            <string>Whitelist</string>
-
             <key>Type</key>
             <string>TextField</string>
+
+            <key>DefaultValue</key>
+            <string>en.wikipedia.org www.google.com</string>
         </dict>
 
         <dict>
-            <key>DefaultValue</key>
-            <string>blacklist</string>
+            <key>Title</key>
+            <string>Use</string>
 
             <key>Key</key>
             <string>list</string>
 
-            <key>Title</key>
-            <string>Use</string>
+            <key>Type</key>
+            <string>PopUpButton</string>
 
             <key>Titles</key>
             <array>
                 <string>Blacklist</string>
                 <string>Whitelist</string>
             </array>
-
-            <key>Type</key>
-            <string>PopUpButton</string>
 
             <key>Values</key>
             <array>
