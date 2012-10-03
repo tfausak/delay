@@ -6,13 +6,17 @@ Inspired by [xkcd #862, "Let Go"][1].
 
 ## Settings
 
--   **Delay**: Number of seconds to wait before loading a blacklisted
-    site. Ranges from 1 to 60 seconds. Default: 30 seconds.
--   **Jitter**: Maximum number of seconds to randomly add or subtract
-    from the delay. Ranges from 0 to 10 seconds. Default: 5 seconds.
--   **Blacklist**: List of hostnames to delay. Delimited by whitespace
-    and case-insensitive. Default: `news.ycombinator.com www.reddit.com`.
--   **Show timer**: Show a countdown timer while sites are delayed.
-    Default: true.
+- **Delay**: Number of seconds to delay blocked sites.
+  Default: 30 seconds.
+- **Jitter**: Maximum number of seconds to randomly change the delay.
+  Default: 5 seconds.
+- **Show timer**: Show a countdown timer while blocked sites are delayed.
+  Default: enabled.
+- **Blacklist**: List of hostnames to block.
+  Default: `news.ycombinator.com www.reddit.com`.
+- **Whitelist**: List of hostnames to allow.
+  Default: `en.wikipedia.org www.google.com`.
+- **Use**: Which list (black or white) to use for blocking.
+  Default: blacklist.
 
 [1]: http://xkcd.com/862/
