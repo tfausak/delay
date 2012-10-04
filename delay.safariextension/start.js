@@ -22,10 +22,10 @@
     var settings = event.message, delay;
 
     if (settings.blacklist) {
-      delay = settings.blacklist.indexOf(window.location.hostname) !== -1;
+      delay = settings.blacklist.test(window.location.hostname);
     }
     else {
-      delay = settings.whitelist.indexOf(window.location.hostname) === -1;
+      delay = !settings.whitelist.test(window.location.hostname);
     }
 
     if (delay) {

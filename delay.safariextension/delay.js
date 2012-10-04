@@ -23,10 +23,10 @@
     delay = 1000 * ((delay - jitter) + (2 * jitter * Math.random()));
 
     if (settings.mode === 'blacklist') {
-      blacklist = settings.blacklist.toLowerCase().split(/\s+/);
+      blacklist = sanitize(settings.blacklist);
     }
     else {
-      whitelist = settings.whitelist.toLowerCase().split(/\s+/);
+      whitelist = sanitize(settings.whitelist);
     }
 
     event.target.page.dispatchMessage('receiveSettings', {
@@ -35,5 +35,16 @@
       'timer': settings.timer,
       'whitelist': whitelist
     });
+  }
+
+  function sanitize (list) {
+    list = list
+      .toLowerCase()
+      .replace(/[.]/g, '[.]')
+      .replace(/([?*])/g, '.$1')
+      .split(/\s+/)
+      .sort()
+      ;
+    return new RegExp('^(' + list.join('|') + ')$', 'i');
   }
 }());
