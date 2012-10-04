@@ -82,6 +82,9 @@
       <key>Type</key>
       <string>PopUpButton</string>
 
+      <key>DefaultValue</key>
+      <string>blacklist</string>
+
       <key>Titles</key>
       <array>
         <string>Blacklist</string>
