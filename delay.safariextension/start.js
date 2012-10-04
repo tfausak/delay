@@ -41,7 +41,7 @@
         Math.round(delay / 1000));
     }
     else {
-      document.documentElement.setAttribute('delay', '');
+      document.documentElement.setAttribute('delay', '\u231b');
     }
 
     intervalID = window.setInterval(function () {
@@ -54,7 +54,7 @@
           Math.round((delay - elapsed) / 1000));
       }
       else {
-        document.documentElement.setAttribute('delay', '');
+        document.documentElement.setAttribute('delay', '\u231b');
       }
 
       if (delay - elapsed < 500) {
