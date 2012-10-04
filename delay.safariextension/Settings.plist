@@ -1,98 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <array>
-        <dict>
-            <key>Title</key>
-            <string>Delay</string>
+  <array>
+    <dict>
+      <key>Title</key>
+      <string>Delay</string>
 
-            <key>Key</key>
-            <string>delay</string>
+      <key>Key</key>
+      <string>delay</string>
 
-            <key>Type</key>
-            <string>TextField</string>
+      <key>Type</key>
+      <string>TextField</string>
 
-            <key>DefaultValue</key>
-            <real>30</real>
-        </dict>
+      <key>DefaultValue</key>
+      <real>30</real>
+    </dict>
 
-        <dict>
-            <key>Title</key>
-            <string>Jitter</string>
+    <dict>
+      <key>Title</key>
+      <string>Jitter</string>
 
-            <key>Key</key>
-            <string>jitter</string>
+      <key>Key</key>
+      <string>jitter</string>
 
-            <key>Type</key>
-            <string>TextField</string>
+      <key>Type</key>
+      <string>TextField</string>
 
-            <key>DefaultValue</key>
-            <real>5</real>
-        </dict>
+      <key>DefaultValue</key>
+      <real>5</real>
+    </dict>
 
-        <dict>
-            <key>Title</key>
-            <string>Show timer</string>
+    <dict>
+      <key>Title</key>
+      <string>Show timer</string>
 
-            <key>Key</key>
-            <string>timer</string>
+      <key>Key</key>
+      <string>timer</string>
 
-            <key>Type</key>
-            <string>CheckBox</string>
+      <key>Type</key>
+      <string>CheckBox</string>
 
-            <key>DefaultValue</key>
-            <true/>
-        </dict>
+      <key>DefaultValue</key>
+      <true/>
+    </dict>
 
-        <dict>
-            <key>Title</key>
-            <string>Blacklist</string>
+    <dict>
+      <key>Title</key>
+      <string>Blacklist</string>
 
-            <key>Key</key>
-            <string>blacklist</string>
+      <key>Key</key>
+      <string>blacklist</string>
 
-            <key>Type</key>
-            <string>TextField</string>
+      <key>Type</key>
+      <string>TextField</string>
 
-            <key>DefaultValue</key>
-            <string>news.ycombinator.com www.reddit.com</string>
-        </dict>
+      <key>DefaultValue</key>
+      <string>news.ycombinator.com www.reddit.com</string>
+    </dict>
 
-        <dict>
-            <key>Title</key>
-            <string>Whitelist</string>
+    <dict>
+      <key>Title</key>
+      <string>Whitelist</string>
 
-            <key>Key</key>
-            <string>whitelist</string>
+      <key>Key</key>
+      <string>whitelist</string>
 
-            <key>Type</key>
-            <string>TextField</string>
+      <key>Type</key>
+      <string>TextField</string>
 
-            <key>DefaultValue</key>
-            <string>en.wikipedia.org www.google.com</string>
-        </dict>
+      <key>DefaultValue</key>
+      <string>en.wikipedia.org www.google.com</string>
+    </dict>
 
-        <dict>
-            <key>Title</key>
-            <string>Use</string>
+    <dict>
+      <key>Title</key>
+      <string>Use</string>
 
-            <key>Key</key>
-            <string>list</string>
+      <key>Key</key>
+      <string>list</string>
 
-            <key>Type</key>
-            <string>PopUpButton</string>
+      <key>Type</key>
+      <string>PopUpButton</string>
 
-            <key>Titles</key>
-            <array>
-                <string>Blacklist</string>
-                <string>Whitelist</string>
-            </array>
+      <key>Titles</key>
+      <array>
+        <string>Blacklist</string>
+        <string>Whitelist</string>
+      </array>
 
-            <key>Values</key>
-            <array>
-                <string>blacklist</string>
-                <string>whitelist</string>
-            </array>
-        </dict>
-    </array>
+      <key>Values</key>
+      <array>
+        <string>blacklist</string>
+        <string>whitelist</string>
+      </array>
+    </dict>
+  </array>
 </plist>
