@@ -13,10 +13,13 @@ Inspired by [xkcd #862, "Let Go"][1].
 - **Show timer**: Show a countdown timer while blocked sites are delayed.
   Default: enabled.
 - **Blacklist**: List of hostnames to block.
-  Default: `news.ycombinator.com www.reddit.com`.
+  Default: `news.ycombinator.com *.reddit.com`.
 - **Whitelist**: List of hostnames to allow.
-  Default: `en.wikipedia.org www.google.com`.
+  Default: `www.google.com *.wikipedia.org`.
 - **Mode**: Which list (black or white) to use for blocking.
   Default: blacklist.
 
+Both the *blacklist* and the *whitelist* support [globbing][2].
+
 [1]: http://xkcd.com/862/
+[2]: http://en.wikipedia.org/wiki/Glob_(programming)

@@ -55,7 +55,7 @@
       <string>TextField</string>
 
       <key>DefaultValue</key>
-      <string>news.ycombinator.com www.reddit.com</string>
+      <string>news.ycombinator.com *.reddit.com</string>
     </dict>
 
     <dict>
@@ -69,7 +69,7 @@
       <string>TextField</string>
 
       <key>DefaultValue</key>
-      <string>en.wikipedia.org www.google.com</string>
+      <string>www.google.com *.wikipedia.org</string>
     </dict>
 
     <dict>
