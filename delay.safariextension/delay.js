@@ -38,13 +38,7 @@
   }
 
   function sanitize (list) {
-    list = list
-      .toLowerCase()
-      .replace(/[.]/g, '[.]')
-      .replace(/([?*])/g, '.$1')
-      .split(/\s+/)
-      .sort()
-      ;
+    list = list.replace(/[.]/g, '[.]').replace(/([?*])/g, '.$1').split(/\s+/);
     return new RegExp('^(' + list.join('|') + ')$', 'i');
   }
 }());
