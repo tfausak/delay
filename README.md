@@ -16,7 +16,7 @@ Inspired by [xkcd #862, "Let Go"][1].
   Default: `news.ycombinator.com www.reddit.com`.
 - **Whitelist**: List of hostnames to allow.
   Default: `en.wikipedia.org www.google.com`.
-- **Use**: Which list (black or white) to use for blocking.
+- **Mode**: Which list (black or white) to use for blocking.
   Default: blacklist.
 
 [1]: http://xkcd.com/862/

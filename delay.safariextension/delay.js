@@ -22,7 +22,7 @@
     }
     delay = 1000 * ((delay - jitter) + (2 * jitter * Math.random()));
 
-    if (settings.list === 'blacklist') {
+    if (settings.mode === 'blacklist') {
       blacklist = settings.blacklist.toLowerCase().split(/\s+/);
     }
     else {

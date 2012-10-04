@@ -74,10 +74,10 @@
 
     <dict>
       <key>Title</key>
-      <string>Use</string>
+      <string>Mode</string>
 
       <key>Key</key>
-      <string>list</string>
+      <string>mode</string>
 
       <key>Type</key>
       <string>PopUpButton</string>
