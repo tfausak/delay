@@ -19,7 +19,7 @@ Inspired by [xkcd #862, "Let Go"][1].
 - **Mode**: Which list (black or white) to use for blocking.
   Default: blacklist.
 
-Both the *blacklist* and the *whitelist* support [globbing][2].
+The black- and whitelists both support [globbing][2].
 
 [1]: http://xkcd.com/862/
 [2]: http://en.wikipedia.org/wiki/Glob_(programming)
