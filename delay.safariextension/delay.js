@@ -9,6 +9,7 @@
 
   function requestSettings (event) {
     var settings = safari.extension.settings,
+      url = event.message.location.href,
       jitter, delay, blacklist, whitelist;
 
     jitter = parseInt(settings.jitter, 10);
@@ -30,6 +31,7 @@
     }
 
     event.target.page.dispatchMessage('receiveSettings', {
+      'active': url === safari.application.activeBrowserWindow.activeTab.url,
       'blacklist': blacklist,
       'delay': delay,
       'timer': settings.timer,

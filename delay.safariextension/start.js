@@ -1,9 +1,11 @@
 (function () {
   "use strict";
-  var active = true;
+  var active = false;
 
   if (window === window.top) {
-    safari.self.tab.dispatchMessage('requestSettings');
+    safari.self.tab.dispatchMessage('requestSettings', {
+      'location': window.location
+    });
     window.onblur = function () {
       active = false;
     };
@@ -20,6 +22,8 @@
 
   function receiveSettings (event) {
     var settings = event.message, delay;
+
+    active = settings.active;
 
     if (settings.blacklist) {
       delay = settings.blacklist.test(window.location.hostname);
