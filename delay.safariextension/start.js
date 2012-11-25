@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var active = false;
+  var active = false, attribute = 'data-delay';
 
   if (window === window.top) {
     safari.self.tab.dispatchMessage('requestSettings', {
@@ -30,7 +30,7 @@
     tick = event.message.tick;
     timer = event.message.timer;
 
-    document.documentElement.setAttribute('delay',
+    document.documentElement.setAttribute(attribute,
       timer ? Math.round(delay / tick) : '\u231b');
 
     intervalID = window.setInterval(function () {
@@ -41,12 +41,12 @@
       elapsed += tick;
 
       if (timer) {
-        document.documentElement.setAttribute('delay',
+        document.documentElement.setAttribute(attribute,
           Math.round((delay - elapsed) / tick));
       }
 
       if (Math.round((delay - elapsed) / tick) === 0) {
-        document.documentElement.removeAttribute('delay');
+        document.documentElement.removeAttribute(attribute);
         window.clearInterval(intervalID);
       }
     }, tick);

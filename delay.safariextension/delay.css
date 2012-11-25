@@ -1,9 +1,9 @@
-[delay] {
+[data-delay] {
   background: transparent !important;
 }
-[delay]:before {
+[data-delay]:before {
   color: black;
-  content: attr(delay);
+  content: attr(data-delay);
   display: block;
   font: 24px/2em 'Menlo';
   left: 50%;
@@ -14,7 +14,7 @@
   width: 2em;
   z-index: 2147483647;
 }
-[delay] * {
+[data-delay] * {
   background: transparent !important;
   opacity: 0 !important;
   visibility: hidden !important;
