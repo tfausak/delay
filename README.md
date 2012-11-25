@@ -25,6 +25,8 @@ The black- and whitelists both support [globbing][2].
 
 ## Changelog
 
+- v1.6
+  * Add a grace period.
 - v1.5
   * Mark background tabs as inactive.
 - v1.4
