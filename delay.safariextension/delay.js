@@ -1,15 +1,19 @@
 (function () {
   'use strict';
-  var tick = 1000;
+  var graces = {}, tick = 1000;
 
   safari.application.addEventListener('message', function (event) {
     if (event.name === 'requestSettings') {
-      return requestSettings(event);
+      requestSettings(event);
+    }
+    else if (event.name === 'finishedDelaying') {
+      finishedDelaying(event);
     }
   }, false);
 
   function requestSettings (event) {
-    var settings = safari.extension.settings, delay, jitter, list;
+    var settings = safari.extension.settings, delay, grace, jitter, list, now,
+      then;
 
     if (settings.mode === 'blacklist') {
       list = cleanList(settings.blacklist);
@@ -24,9 +28,20 @@
       }
     }
 
+    grace = cleanInt(settings.grace);
+    if (grace) {
+      grace *= tick;
+      then = graces[event.message.location.hostname];
+      now = new Date();
+      if (now - then < grace) {
+        graces[event.message.location.hostname] = now;
+        return;
+      }
+    }
+
     jitter = cleanInt(settings.jitter);
     delay = cleanInt(settings.delay);
-    if (jitter > 0) {
+    if (jitter) {
       delay = (delay - jitter) + (2 * jitter * Math.random());
     }
     delay *= tick;
@@ -38,6 +53,10 @@
       'tick': tick,
       'timer': settings.timer
     });
+  }
+
+  function finishedDelaying (event) {
+    graces[event.message.location.hostname] = new Date();
   }
 
   function cleanInt (value) {

@@ -16,7 +16,7 @@
 
   safari.self.addEventListener('message', function (event) {
     if (event.name === 'receiveSettings') {
-      return receiveSettings(event);
+      receiveSettings(event);
     }
   }, false);
 
@@ -48,6 +48,10 @@
       if (Math.round((delay - elapsed) / tick) === 0) {
         document.documentElement.removeAttribute(attribute);
         window.clearInterval(intervalID);
+
+        safari.self.tab.dispatchMessage('finishedDelaying', {
+          'location': window.location
+        });
       }
     }, tick);
   }

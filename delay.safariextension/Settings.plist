@@ -97,5 +97,19 @@
         <string>whitelist</string>
       </array>
     </dict>
+
+    <dict>
+      <key>Title</key>
+      <string>Grace Period</string>
+
+      <key>Key</key>
+      <string>grace</string>
+
+      <key>Type</key>
+      <string>TextField</string>
+
+      <key>DefaultValue</key>
+      <real>5</real>
+    </dict>
   </array>
 </plist>
