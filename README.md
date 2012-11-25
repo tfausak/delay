@@ -18,6 +18,8 @@ Inspired by [xkcd #862, "Let Go"][1].
   Default: `www.google.com *.wikipedia.org`.
 - **Mode**: Which list (black or white) to use for blocking.
   Default: blacklist.
+- **Grace period**: Number of seconds to allow links on the same site.
+  Default: 5 seconds.
 
 The black- and whitelists both support [globbing][2].
 
