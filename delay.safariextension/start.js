@@ -21,30 +21,34 @@
   }, false);
 
   function receiveSettings (event) {
-    var delay = event.message.delay, elapsed = 0, timer = event.message.timer,
-        intervalID;
+    var delay, elapsed, intervalID, tick, timer;
 
     active = event.message.active;
 
+    delay = event.message.delay;
+    elapsed = 0;
+    tick = event.message.tick;
+    timer = event.message.timer;
+
     document.documentElement.setAttribute('delay',
-      timer ? Math.round(delay / 1000) : '\u231b');
+      timer ? Math.round(delay / tick) : '\u231b');
 
     intervalID = window.setInterval(function () {
       if (!active) {
         return;
       }
 
-      elapsed += 1000;
+      elapsed += tick;
 
       if (timer) {
         document.documentElement.setAttribute('delay',
-          Math.round((delay - elapsed) / 1000));
+          Math.round((delay - elapsed) / tick));
       }
 
-      if (delay - elapsed < 500) {
+      if (Math.round((delay - elapsed) / tick) === 0) {
         document.documentElement.removeAttribute('delay');
         window.clearInterval(intervalID);
       }
-    }, 1000);
+    }, tick);
   }
 }());

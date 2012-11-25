@@ -1,5 +1,6 @@
 (function () {
   'use strict';
+  var tick = 1000;
 
   safari.application.addEventListener('message', function (event) {
     if (event.name === 'requestSettings') {
@@ -28,12 +29,13 @@
     if (jitter > 0) {
       delay = (delay - jitter) + (2 * jitter * Math.random());
     }
-    delay *= 1000;
+    delay *= tick;
 
     event.target.page.dispatchMessage('receiveSettings', {
       'active': event.message.location.href ===
         safari.application.activeBrowserWindow.activeTab.url,
       'delay': delay,
+      'tick': tick,
       'timer': settings.timer
     });
   }
