@@ -49,7 +49,8 @@
   }
 
   function cleanList (value) {
-    value = value.replace(/[.]/g, '[.]').replace(/([?*])/g, '.$1').split(/\s+/);
-    return new RegExp('^(' + value.join('|') + ')$', 'i');
+    value = value.replace(/[-\[\]\/{}()+\\^$|]/g, '\\$&');
+    value = value.replace(/[.]/g, '[.]').replace(/([?*])/g, '.$1');
+    return new RegExp('^(' + value.split(/\s+/).join('|') + ')$', 'i');
   }
 }());
