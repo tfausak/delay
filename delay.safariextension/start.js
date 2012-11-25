@@ -1,5 +1,5 @@
 (function () {
-  "use strict";
+  'use strict';
   var active = false;
 
   if (window === window.top) {
@@ -21,44 +21,24 @@
   }, false);
 
   function receiveSettings (event) {
-    var settings = event.message, delay;
+    var delay = event.message.delay, elapsed = 0, timer = event.message.timer,
+        intervalID;
 
-    active = settings.active;
+    active = event.message.active;
 
-    if (settings.blacklist) {
-      delay = settings.blacklist.test(window.location.hostname);
-    }
-    else {
-      delay = !settings.whitelist.test(window.location.hostname);
-    }
-
-    if (delay) {
-      delayPage(settings.delay, settings.timer);
-    }
-  }
-
-  function delayPage (delay, timer) {
-    var intervalID, elapsed = 0;
-
-    if (timer) {
-      document.documentElement.setAttribute('delay',
-        Math.round(delay / 1000));
-    }
-    else {
-      document.documentElement.setAttribute('delay', '\u231b');
-    }
+    document.documentElement.setAttribute('delay',
+      timer ? Math.round(delay / 1000) : '\u231b');
 
     intervalID = window.setInterval(function () {
-      if (active) {
-        elapsed += 1000;
+      if (!active) {
+        return;
       }
+
+      elapsed += 1000;
 
       if (timer) {
         document.documentElement.setAttribute('delay',
           Math.round((delay - elapsed) / 1000));
-      }
-      else {
-        document.documentElement.setAttribute('delay', '\u231b');
       }
 
       if (delay - elapsed < 500) {

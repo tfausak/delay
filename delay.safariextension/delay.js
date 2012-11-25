@@ -1,5 +1,5 @@
 (function () {
-  "use strict";
+  'use strict';
 
   safari.application.addEventListener('message', function (event) {
     if (event.name === 'requestSettings') {
@@ -8,39 +8,46 @@
   }, false);
 
   function requestSettings (event) {
-    var settings = safari.extension.settings,
-      url = event.message.location.href,
-      jitter, delay, blacklist, whitelist;
-
-    jitter = parseInt(settings.jitter, 10);
-    if (isNaN(jitter) || jitter < 0) {
-      jitter = 0;
-    }
-
-    delay = parseInt(settings.delay, 10);
-    if (isNaN(delay) || delay < 0) {
-      delay = 0;
-    }
-    delay = 1000 * ((delay - jitter) + (2 * jitter * Math.random()));
+    var settings = safari.extension.settings, delay, jitter, list;
 
     if (settings.mode === 'blacklist') {
-      blacklist = sanitize(settings.blacklist);
+      list = cleanList(settings.blacklist);
+      if (!list.test(event.message.location.hostname)) {
+        return;
+      }
     }
     else {
-      whitelist = sanitize(settings.whitelist);
+      list = cleanList(settings.whitelist);
+      if (list.test(event.message.location.hostname)) {
+        return;
+      }
     }
 
+    jitter = cleanInt(settings.jitter);
+    delay = cleanInt(settings.delay);
+    if (jitter > 0) {
+      delay = (delay - jitter) + (2 * jitter * Math.random());
+    }
+    delay *= 1000;
+
     event.target.page.dispatchMessage('receiveSettings', {
-      'active': url === safari.application.activeBrowserWindow.activeTab.url,
-      'blacklist': blacklist,
+      'active': event.message.location.href ===
+        safari.application.activeBrowserWindow.activeTab.url,
       'delay': delay,
-      'timer': settings.timer,
-      'whitelist': whitelist
+      'timer': settings.timer
     });
   }
 
-  function sanitize (list) {
-    list = list.replace(/[.]/g, '[.]').replace(/([?*])/g, '.$1').split(/\s+/);
-    return new RegExp('^(' + list.join('|') + ')$', 'i');
+  function cleanInt (value) {
+    value = parseInt(value, 10);
+    if (isNaN(value) || value < 0) {
+      value = 0;
+    }
+    return value;
+  }
+
+  function cleanList (value) {
+    value = value.replace(/[.]/g, '[.]').replace(/([?*])/g, '.$1').split(/\s+/);
+    return new RegExp('^(' + value.join('|') + ')$', 'i');
   }
 }());
