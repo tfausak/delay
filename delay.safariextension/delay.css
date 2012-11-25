@@ -1,6 +1,3 @@
-[data-delay] {
-  background: transparent !important;
-}
 [data-delay]:before {
   color: black;
   content: attr(data-delay);
