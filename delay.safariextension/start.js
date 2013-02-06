@@ -45,7 +45,7 @@
           Math.round((delay - elapsed) / tick));
       }
 
-      if (Math.round((delay - elapsed) / tick) === 0) {
+      if (Math.round((delay - elapsed) / tick) <= 0) {
         document.documentElement.removeAttribute(attribute);
         window.clearInterval(intervalID);
 

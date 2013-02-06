@@ -46,6 +46,10 @@
     }
     delay *= tick;
 
+    if (Math.round((delay - elapsed) / tick) <= 0) {
+      return;
+    }
+
     event.target.page.dispatchMessage('receiveSettings', {
       'active': event.message.location.href ===
         safari.application.activeBrowserWindow.activeTab.url,
