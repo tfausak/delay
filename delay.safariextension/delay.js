@@ -46,7 +46,7 @@
     }
     delay *= tick;
 
-    if (Math.round((delay - elapsed) / tick) <= 0) {
+    if (Math.round(delay / tick) <= 0) {
       return;
     }
 
