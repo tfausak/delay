@@ -4,6 +4,20 @@
   <array>
     <dict>
       <key>Title</key>
+      <string>Disabled</string>
+
+      <key>Key</key>
+      <string>disabled</string>
+
+      <key>Type</key>
+      <string>Hidden</string>
+
+      <key>DefaultValue</key>
+      <false/>
+    </dict>
+
+    <dict>
+      <key>Title</key>
       <string>Delay</string>
 
       <key>Key</key>

@@ -6,7 +6,7 @@
     <string>Taylor Fausak</string>
 
     <key>Builder Version</key>
-    <string>8536.26.17</string>
+    <string>8536.30.1</string>
 
     <key>CFBundleDisplayName</key>
     <string>Delay</string>
@@ -27,6 +27,26 @@
     <dict>
       <key>Global Page</key>
       <string>delay.html</string>
+
+      <key>Toolbar Items</key>
+      <array>
+        <dict>
+          <key>Identifier</key>
+          <string>toggle</string>
+
+          <key>Image</key>
+          <string>toolbar-toggle.png</string>
+
+          <key>Include By Default</key>
+          <false/>
+
+          <key>Label</key>
+          <string>Delay</string>
+
+          <key>Palette Label</key>
+          <string>Delay</string>
+        </dict>
+      </array>
     </dict>
 
     <key>Content</key>
@@ -55,11 +75,11 @@
     <dict>
       <key>Website Access</key>
       <dict>
-        <key>Level</key>
-        <string>All</string>
-
         <key>Include Secure Pages</key>
         <true/>
+
+        <key>Level</key>
+        <string>All</string>
       </dict>
     </dict>
 

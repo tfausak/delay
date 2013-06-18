@@ -11,9 +11,21 @@
     }
   }, false);
 
+  safari.application.addEventListener('command', function (event) {
+    var settings = safari.extension.settings;
+
+    if (event.command === 'toggle') {
+      settings.disabled = !settings.disabled;
+    }
+  }, false);
+
   function requestSettings (event) {
     var settings = safari.extension.settings, delay, grace, jitter, list, now,
       then;
+
+    if (settings.disabled) {
+      return;
+    }
 
     if (settings.mode === 'blacklist') {
       list = cleanList(settings.blacklist);
