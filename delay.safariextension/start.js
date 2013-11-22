@@ -3,9 +3,9 @@
   var active = false, attribute = 'data-delay';
 
   if (window === window.top) {
-    safari.self.tab.dispatchMessage('requestSettings', {
+    safari.self.tab.dispatchMessage('requestSettings', JSON.stringify({
       'location': window.location
-    });
+    }));
     window.onblur = function () {
       active = false;
     };
@@ -49,9 +49,9 @@
         document.documentElement.removeAttribute(attribute);
         window.clearInterval(intervalID);
 
-        safari.self.tab.dispatchMessage('finishedDelaying', {
+        safari.self.tab.dispatchMessage('finishedDelaying', JSON.stringify({
           'location': window.location
-        });
+        }));
       }
     }, tick);
   }

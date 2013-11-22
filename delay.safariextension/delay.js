@@ -3,6 +3,7 @@
   var graces = {}, tick = 1000;
 
   safari.application.addEventListener('message', function (event) {
+    event.message = JSON.parse(event.message);
     if (event.name === 'requestSettings') {
       requestSettings(event);
     }
